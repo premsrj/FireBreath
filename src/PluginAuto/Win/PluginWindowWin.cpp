@@ -224,7 +224,7 @@ bool PluginWindowWin::WinProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam
         }
         case WM_SIZE:
         {
-            ResizedEvent ev;
+            ResizedEvent ev(LOWORD(lParam), HIWORD(lParam));
             if(SendEvent(&ev))
                 return true;
             break;
